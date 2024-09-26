@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common'
+import { CommonModule, NgStyle } from '@angular/common'
 import { Component, Input, OnInit } from '@angular/core'
 import FaceSnap from '../../core/models/face-snap'
 import Picture from '../../core/types/picture'
@@ -7,7 +7,7 @@ import { DatePipeComponent } from '../helpers/date-format/date-format.component'
 @Component({
   selector: 'app-face-snap',
   standalone: true,
-  imports: [DatePipeComponent, CommonModule],
+  imports: [DatePipeComponent, CommonModule, NgStyle],
   templateUrl: './face-snap.component.html',
   styleUrl: './face-snap.component.scss',
 })
@@ -35,5 +35,11 @@ export class FaceSnapComponent implements OnInit {
   unSnap(): void {
     this.facesnap.subSnaps()
     this.snappedByUser = false
+  }
+
+  getGreenerStyle(): object {
+    const topValue = 20
+    const greenValue = (255 * Math.min(topValue, this.facesnap.getSnapCount() / topValue))
+    return { color: `rgb(0, ${greenValue}, 0)` }
   }
 }

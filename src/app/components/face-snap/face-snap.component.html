@@ -1,11 +1,18 @@
 <h2>{{ facesnap.getTitle() }}</h2>
-<img [src]="picture.url" [alt]="picture.alt" [title]="picture.title ">
-@if(facesnap.hasLocation()) {
-<p>Localisation&nbsp;: {{ facesnap.getLocation() }}</p>
-} @else {
-<p>Localisation&nbsp;: Non spécifiée</p>
-}
-<p><app-date-pipe [date]="facesnap.getDate()"></app-date-pipe></p>
-<p>{{ facesnap.getDescription() }}</p>
-<button (click)="onSnap()">@if(snappedByUser) {Snapped} @else {Oh snap !}</button>
-<p>🤌&nbsp;{{ facesnap.getSnapCount() }}</p>
+<div class="img-container">
+  <img [src]="picture.url" [alt]="picture.alt" [title]="picture.title ">
+</div>
+<div class="content">
+  @if(facesnap.hasLocation()) {
+  <p>Localisation&nbsp;: {{ facesnap.getLocation() }}</p>
+  } @else {
+  <p>Localisation&nbsp;: Non spécifiée</p>
+  }
+  <p>{{ facesnap.getDescription() }}</p>
+  <p><app-date-pipe [date]="facesnap.getDate()"></app-date-pipe></p>
+</div>
+<div class="footer mt-auto mb-2">
+  <button (click)="onSnap()">@if(snappedByUser) {Snapped} @else {Oh snap !}</button>
+  <span [ngStyle]="getGreenerStyle()">🤌&nbsp;{{
+    facesnap.getSnapCount() }}</span>
+</div>

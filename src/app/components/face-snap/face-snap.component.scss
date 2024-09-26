@@ -1,9 +1,17 @@
+@use "vars" as vars;
+
 :host {
-  display: block;
+  display: inline-flex;
+  height: 25rem;
   box-sizing: border-box;
+  flex-direction: column;
   padding: .625rem 1.875rem;
   margin: 1.25rem auto;
   box-shadow: var(--sl-color-primary-300) .25rem .25rem 1.25rem;
+
+  @media screen and (min-width: vars.$breakpoint-med) {
+    height: 30rem;
+  }
 
   h2 {
     margin-bottom: 0;
@@ -13,11 +21,24 @@
     font-weight: 300;
   }
 
-  img {
-    width: 100%;
-    max-width: 25rem;
-    height: auto;
-    object-fit: contain;
+  .img-container {
+    flex-grow: 1;
+
+    img {
+      width: 100%;
+      max-width: 25rem;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
   }
 
   button {
