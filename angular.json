@@ -47,10 +47,18 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "externalDependencies": [
+              ""
+            ],
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*.*",
+                "input": "node_modules/@shoelace-style/shoelace/cdn",
+                "output": "./assets/shoelace"
               }
             ],
             "stylePreprocessorOptions": {
@@ -59,7 +67,8 @@
               ]
             },
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "@shoelace-style/shoelace/dist/themes/dark.css"
             ],
             "scripts": []
           },

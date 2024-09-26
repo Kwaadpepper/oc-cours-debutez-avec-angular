@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { FaceSnapComponent } from './components/face-snap/face-snap.component'
 import FaceSnap from './core/models/face-snap'
@@ -9,6 +9,7 @@ import FaceSnap from './core/models/face-snap'
   imports: [RouterOutlet, FaceSnapComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent implements OnInit {
   title = 'snapface'
