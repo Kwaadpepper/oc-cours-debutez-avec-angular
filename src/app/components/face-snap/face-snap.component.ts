@@ -1,5 +1,5 @@
 import { CommonModule, NgStyle } from '@angular/common'
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, HostBinding, Input, OnInit } from '@angular/core'
 import FaceSnap from '../../core/models/face-snap'
 import Picture from '../../core/types/picture'
 import { DatePipeComponent } from '../helpers/date-format/date-format.component'
@@ -13,6 +13,8 @@ import { DatePipeComponent } from '../helpers/date-format/date-format.component'
 })
 export class FaceSnapComponent implements OnInit {
   @Input({ required: true }) facesnap!: FaceSnap
+
+  @HostBinding('class.snapped') isSnapped = false
 
   snappedByUser = false
   picture!: Picture
@@ -30,11 +32,13 @@ export class FaceSnapComponent implements OnInit {
   snap(): void {
     this.facesnap.incSnaps()
     this.snappedByUser = true
+    this.isSnapped = true
   }
 
   unSnap(): void {
     this.facesnap.subSnaps()
     this.snappedByUser = false
+    this.isSnapped = false
   }
 
   getGreenerStyle(): object {

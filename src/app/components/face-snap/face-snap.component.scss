@@ -57,4 +57,20 @@
       transform: translate(.063rem, .063rem);
     }
   }
+
+  &.snapped {
+    background-color: rgb(144 238 144 / 40%);
+    color: #006400;
+
+    button {
+      box-shadow: #90ee90 .188rem .188rem .438rem;
+      color: #006400;
+
+      &:active {
+        box-shadow: #90ee90 0 0 .313rem;
+      }
+    }
+  }
 }
+
+
