@@ -13,11 +13,10 @@ import FaceSnap from './core/models/face-snap'
 export class AppComponent implements OnInit {
   title = 'snapface'
 
-  facesnap!: FaceSnap
-  facesnapAutre!: FaceSnap
+  facesnapList: FaceSnap[] = []
 
   public ngOnInit(): void {
-    this.facesnap = new FaceSnap(
+    this.facesnapList.push(new FaceSnap(
       'Face de snap 1',
       'Une ville génerée par ordinateur',
       new Date(),
@@ -27,8 +26,8 @@ export class AppComponent implements OnInit {
         title: 'Une image d\'une citee generé par prompt IA et trouvée sur internet',
         alt: 'Snap 1',
       },
-    )
-    this.facesnapAutre = new FaceSnap(
+    ))
+    this.facesnapList.push(new FaceSnap(
       'Face de snap 2',
       'Une superbe photo à la montagne',
       new Date(),
@@ -38,7 +37,7 @@ export class AppComponent implements OnInit {
         title: 'Une image d\'une montagne prise par un photographe et trouvée sur internet',
         alt: 'Snap 2',
       },
-    )
-    this.facesnapAutre.setLocation('a la montagne')
+    ))
+    this.facesnapList.at(1)!.setLocation('a la montagne')
   }
 }

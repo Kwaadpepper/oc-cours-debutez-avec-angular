@@ -1,2 +1,7 @@
-<app-face-snap [facesnap]="facesnap"></app-face-snap>
-<app-face-snap [facesnap]="facesnapAutre"></app-face-snap>
+<h1>Facesnap list</h1>
+
+<div>
+  @for (facesnap of facesnapList; track $index) {
+  <app-face-snap [facesnap]="facesnap" />
+  }
+</div>
