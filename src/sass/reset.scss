@@ -1,0 +1,5 @@
+@use "vars" as vars;
+
+* {
+  font-family: vars.$default-font-family;
+}

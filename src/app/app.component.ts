@@ -41,4 +41,10 @@ export class AppComponent implements OnInit {
     ))
     this.facesnapList.at(1)!.setLocation('a la montagne')
   }
+
+  onClick(e: MouseEvent): void {
+    e.preventDefault()
+
+    alert('toto')
+  }
 }

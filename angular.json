@@ -54,11 +54,6 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              {
-                "glob": "**/*.*",
-                "input": "node_modules/@shoelace-style/shoelace/cdn",
-                "output": "./assets/shoelace"
               }
             ],
             "stylePreprocessorOptions": {
@@ -67,8 +62,7 @@
               ]
             },
             "styles": [
-              "src/styles.scss",
-              "@shoelace-style/shoelace/dist/themes/dark.css"
+              "src/main.scss"
             ],
             "scripts": []
           },

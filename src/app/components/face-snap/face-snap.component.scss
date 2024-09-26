@@ -1,4 +1,5 @@
-.snap-face-card {
+:host {
+  display: block;
   width: 100%;
   max-width: 30rem;
   box-sizing: border-box;
@@ -38,8 +39,3 @@
     }
   }
 }
-
-
-
-
-

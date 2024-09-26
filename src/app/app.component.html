@@ -1,8 +1,8 @@
 <h1>Facesnap list</h1>
 
 <div id="page">
-  <button #button>Show drawer</button>
-  <sl-button size="small" onclick="alert('toto')">Click me</sl-button>
+  <button>Show drawer</button>
+  <sl-button (click)="onClick($event)" size="small">Click me</sl-button>
 </div>
 
 <div class="facesnap-container">

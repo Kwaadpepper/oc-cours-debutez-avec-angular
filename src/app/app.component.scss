@@ -1,15 +1,5 @@
 @use "sass:color";
-@import "vars";
-
-h1 {
-  position: sticky;
-  top: 0;
-  background-color: #{color.adjust($bg-color, $lightness: 10%)} !important;
-  color: $title-color;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: underline;
-}
+@use "vars" as vars;
 
 .facesnap-container {
   max-width: 1200px;
