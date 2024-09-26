@@ -1,6 +1,11 @@
 <div class="snap-face-card">
   <h2>{{ facesnap.getTitle() }}</h2>
   <img [src]="picture.url" [alt]="picture.alt" [title]="picture.title ">
+  @if(facesnap.hasLocation()) {
+  <p>Localisation&nbsp;: {{ facesnap.getLocation() }}</p>
+  } @else {
+  <p>Localisation&nbsp;: Non spécifiée</p>
+  }
   <p><app-date-pipe [date]="facesnap.getDate()"></app-date-pipe></p>
   <p>{{ facesnap.getDescription() }}</p>
   <button (click)="onSnap()">@if(snappedByUser) {Snapped} @else {Oh snap !}</button>

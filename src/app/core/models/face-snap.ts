@@ -7,6 +7,7 @@ export default class FaceSnap {
     private createdAt: Date,
     private snaps: number,
     private picture: Picture,
+    private location?: string,
   ) {
     this.title = title
     this.description = description
@@ -41,5 +42,17 @@ export default class FaceSnap {
 
   public getPicture(): Picture {
     return Object.assign({}, this.picture)
+  }
+
+  public hasLocation(): boolean {
+    return this.location !== undefined
+  }
+
+  public getLocation(): string | undefined {
+    return this.location
+  }
+
+  public setLocation(location: string | undefined): void {
+    this.location = location
   }
 }

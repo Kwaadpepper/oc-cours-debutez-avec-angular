@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common'
 import { Component, Input, OnInit } from '@angular/core'
 import FaceSnap from '../../core/models/face-snap'
 import Picture from '../../core/types/picture'
@@ -6,7 +7,7 @@ import { DatePipeComponent } from '../helpers/date-format/date-format.component'
 @Component({
   selector: 'app-face-snap',
   standalone: true,
-  imports: [DatePipeComponent],
+  imports: [DatePipeComponent, CommonModule],
   templateUrl: './face-snap.component.html',
   styleUrl: './face-snap.component.scss',
 })
