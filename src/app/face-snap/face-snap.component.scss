@@ -1,0 +1,11 @@
+.snap-face-card {
+  width: 100%;
+  max-width: 30rem;
+
+  img {
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    object-fit: contain;
+  }
+}
