@@ -1,4 +1,5 @@
 @use "vars" as vars;
+@use '@acab/reset.css';
 
 * {
   font-family: vars.$default-font-family;

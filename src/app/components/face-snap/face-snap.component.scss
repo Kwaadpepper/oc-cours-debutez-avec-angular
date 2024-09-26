@@ -1,11 +1,9 @@
 :host {
   display: block;
-  width: 100%;
-  max-width: 30rem;
   box-sizing: border-box;
   padding: .625rem 1.875rem;
   margin: 1.25rem auto;
-  box-shadow: #d3d3d3 .25rem .25rem 1.25rem;
+  box-shadow: var(--sl-color-primary-300) .25rem .25rem 1.25rem;
 
   h2 {
     margin-bottom: 0;
@@ -28,13 +26,13 @@
     border: 0;
     margin-right: 1.25rem;
     background-color: transparent;
-    box-shadow: #d3d3d3 .188rem .188rem .438rem;
+    box-shadow: var(--sl-color-primary-300) .188rem .188rem .438rem;
     font-size: .875rem;
     font-weight: 500;
     outline: none;
 
     &:active {
-      box-shadow: #d3d3d3 0 0 .313rem;
+      box-shadow: var(--sl-color-primary-300) 0 0 .313rem;
       transform: translate(.063rem, .063rem);
     }
   }

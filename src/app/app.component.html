@@ -1,12 +1,18 @@
-<h1>Facesnap list</h1>
+<div class="container">
+  <header class="row py-3 mb-3">
+    <h1>Facesnap</h1>
+  </header>
 
-<div id="page">
-  <button>Show drawer</button>
-  <sl-button (click)="onClick($event)" size="small">Click me</sl-button>
-</div>
+  <main class="row mb-3 py-3">
 
-<div class="facesnap-container">
-  @for (facesnap of facesnapList; track $index) {
-  <app-face-snap [facesnap]="facesnap" />
-  }
+    @for (facesnap of facesnapList; track $index) {
+    <app-face-snap [facesnap]="facesnap" class="col-6 col-sm-12" />
+    }
+
+  </main>
+
+  <div class="facesnap-container">
+
+  </div>
+
 </div>
