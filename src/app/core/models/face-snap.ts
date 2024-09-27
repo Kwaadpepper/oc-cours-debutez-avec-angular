@@ -1,6 +1,8 @@
 import Picture from '../types/picture'
 
 export default class FaceSnap {
+  private id: string
+
   constructor(
     private title: string,
     private description: string,
@@ -9,6 +11,7 @@ export default class FaceSnap {
     private picture: Picture,
     private location?: string,
   ) {
+    this.id = crypto.randomUUID()
     this.title = title
     this.description = description
     this.createdAt = new Date(createdAt)
@@ -19,6 +22,10 @@ export default class FaceSnap {
   public withLocation(location: string | undefined): FaceSnap {
     this.setLocation(location)
     return this
+  }
+
+  public getId(): string {
+    return this.id
   }
 
   public getTitle(): string {
