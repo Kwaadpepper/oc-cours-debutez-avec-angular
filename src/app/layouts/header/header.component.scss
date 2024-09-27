@@ -9,8 +9,15 @@ app-header {
     position: sticky;
     z-index: 1;
     top: 0;
+    display: flex;
     padding: 0.625rem;
     background-color: var(--sl-color-neutral-100);
     text-align: center;
+
+    sl-button-group {
+      > .active::part(base) {
+        background-color: var(--sl-color-primary-100);
+      }
+    }
   }
 }

@@ -1,3 +1,9 @@
 <header class="row">
-  <h1>Facesnap</h1>
+  <h1 class="ms-4">Facesnap</h1>
+  <div class="ms-8 mt-3">
+    <sl-button-group label="Main menu">
+      <sl-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</sl-button>
+      <sl-button routerLink="/facesnaps" routerLinkActive="active">FaceSnaps</sl-button>
+    </sl-button-group>
+  </div>
 </header>
