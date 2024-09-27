@@ -11,7 +11,7 @@ export class FaceSnapsService {
 
   constructor() {
     this.facesnapList.push(new FaceSnap(
-      'Face de Snap 1',
+      'Face Snap 1',
       'Une ville génerée par ordinateur',
       new Date('2024-03-25 12:03'),
       5,
@@ -22,7 +22,7 @@ export class FaceSnapsService {
       },
     ))
     this.facesnapList.push(new FaceSnap(
-      'Face de snap 2',
+      'Face snap 2',
       'Une superbe photo à la montagne',
       new Date(),
       19,
@@ -39,10 +39,16 @@ export class FaceSnapsService {
   }
 
   snapFaceSnapById(id: string, action: SnapAction): void {
+    const faceSnap = this.getFaceSnapById(id)
+    faceSnap.snap(action)
+  }
+
+  /** @throws Error if the facesnap is not found */
+  getFaceSnapById(id: string): FaceSnap {
     const faceSnap = this.facesnapList.find(fs => fs.getId() === id)
     if (faceSnap === undefined) {
       throw new Error('Facesnap not found')
     }
-    faceSnap.snap(action)
+    return faceSnap
   }
 }
