@@ -60,7 +60,7 @@ $shoe-spacings: (
     padding-right: var(--sl-spacing-#{$size}) !important;
   }
   .ps-#{$prefix} {
-    padding-right: var(--sl-spacing-#{$size}) !important;
+    padding-left: var(--sl-spacing-#{$size}) !important;
   }
   .m-#{$prefix} {
     margin: var(--sl-spacing-#{$size}) !important;
@@ -83,6 +83,6 @@ $shoe-spacings: (
     margin-right: var(--sl-spacing-#{$size}) !important;
   }
   .ms-#{$prefix} {
-    margin-right: var(--sl-spacing-#{$size}) !important;
+    margin-left: var(--sl-spacing-#{$size}) !important;
   }
 }
