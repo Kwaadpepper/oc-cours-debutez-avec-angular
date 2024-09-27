@@ -29,7 +29,6 @@
     "selector-max-compound-selectors": 5,
     "max-nesting-depth": 5,
     "declaration-block-trailing-semicolon": "always",
-    "block-closing-brace-newline-before": "always",
     "scss/double-slash-comment-empty-line-before": [
       "always",
       {
