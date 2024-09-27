@@ -1,5 +1,6 @@
 import { CommonModule, DatePipe, NgClass, NgStyle } from '@angular/common'
-import { Component, HostBinding, Input, OnInit } from '@angular/core'
+import { Component, CUSTOM_ELEMENTS_SCHEMA, HostBinding, Input, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 import { NgStringPipesModule } from 'ngx-pipes'
 import FaceSnap from '../../core/models/face-snap'
 import { FaceSnapsService } from '../../core/services/face-snaps.service'
@@ -7,19 +8,22 @@ import Picture from '../../core/types/picture'
 import { DatePipeComponent } from '../helpers/date-format/date-format.component'
 
 @Component({
-  selector: 'app-face-snap',
+  selector: 'app-face-snap-card',
   standalone: true,
   imports: [DatePipeComponent, CommonModule, NgStyle, NgClass, NgStringPipesModule, DatePipe],
-  templateUrl: './face-snap.component.html',
-  styleUrl: './face-snap.component.scss',
+  templateUrl: './face-snap-card.component.html',
+  styleUrl: './face-snap-card.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class FaceSnapComponent implements OnInit {
+export class FaceSnapCardComponent implements OnInit {
   @Input({ required: true }) facesnap!: FaceSnap
 
   @HostBinding('class.snapped') isSnapped = false
 
-  constructor(private faceSnapsService: FaceSnapsService) {
-  }
+  constructor(
+    private router: Router,
+    private faceSnapsService: FaceSnapsService,
+  ) {}
 
   snappedByUser = false
   picture!: Picture
@@ -32,6 +36,10 @@ export class FaceSnapComponent implements OnInit {
   onSnap(): void {
     if (this.snappedByUser) this.unSnap()
     else this.snap()
+  }
+
+  onView(): void {
+    this.router.navigateByUrl(`facesnaps/${this.facesnap.getId()}`)
   }
 
   snap(): void {

@@ -8,10 +8,10 @@
   } @else {
   <p>Localisation&nbsp;: Non spécifiée</p>
   }
-  <p>{{ facesnap.getDescription() | lowercase | ucfirst }}</p>
   <p><app-date-pipe [date]="facesnap.getDate()"></app-date-pipe></p>
 </div>
 <div class="footer mt-auto mb-2">
-  <button (click)="onSnap()">@if(snappedByUser) {Snapped} @else {Oh snap !}</button>
-  <span [ngStyle]="getGreenerStyle()">🤌&nbsp;{{ facesnap.getSnapCount() }}</span>
+  <sl-button class="mx-2" (click)="onView()">Voir</sl-button>
+  <sl-button class="mx-2" (click)="onSnap()">@if(snappedByUser) {Snapped} @else {Oh snap !}</sl-button>
+  <span class="mt-3 ms-4" [ngStyle]="getGreenerStyle()">🤌&nbsp;{{ facesnap.getSnapCount() }}</span>
 </div>

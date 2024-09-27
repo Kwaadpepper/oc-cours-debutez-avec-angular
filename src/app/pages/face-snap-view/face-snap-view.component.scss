@@ -1,0 +1,63 @@
+@use "vars" as vars;
+
+:host {
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  p {
+    font-weight: 300;
+  }
+
+  .img-container {
+    flex-grow: 1;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    box-sizing: border-box;
+    padding: .313rem .625rem;
+    border: 0;
+    margin-right: 1.25rem;
+    background-color: transparent;
+    box-shadow: var(--sl-color-primary-300) .188rem .188rem .438rem;
+    font-size: .875rem;
+    font-weight: 500;
+    outline: none;
+
+    &:active {
+      box-shadow: var(--sl-color-primary-300) 0 0 .313rem;
+      transform: translate(.063rem, .063rem);
+    }
+  }
+
+  &.snapped {
+    background-color: rgb(144 238 144 / 40%);
+    color: #006400;
+
+    button {
+      box-shadow: #90ee90 .188rem .188rem .438rem;
+      color: #006400;
+
+      &:active {
+        box-shadow: #90ee90 0 0 .313rem;
+      }
+    }
+  }
+}

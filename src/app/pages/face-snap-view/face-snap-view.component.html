@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <article class="col-12">
+      <header class="my-4">
+        <h1 [ngClass]="{'sdsd': true}">{{ facesnap.getTitle() | lowercase | ucfirst }}</h1>
+      </header>
+      <main class="my-4">
+        <figure class="img-container">
+          <img [src]="picture.url" [alt]="picture.alt" [title]="picture.title ">
+          <figcaption class="content mt-3">
+            @if(facesnap.hasLocation()) {
+            <p>Localisation&nbsp;: {{ facesnap.getLocation() | lowercase | ucfirst }}</p>
+            } @else {
+            <p>Localisation&nbsp;: Non spécifiée</p>
+            }
+            <p><app-date-pipe [date]="facesnap.getDate()"></app-date-pipe></p>
+          </figcaption>
+        </figure>
+      </main>
+      <footer class="footer mt-auto my-4">
+        <sl-button class="mx-2" (click)="onSnap()">@if(snappedByUser) {Snapped} @else {Oh snap !}</sl-button>
+        <span class="mt-3 ms-4" [ngStyle]="getGreenerStyle()">🤌&nbsp;{{ facesnap.getSnapCount() }}</span>
+      </footer>
+    </article>
+  </div>
+</div>
