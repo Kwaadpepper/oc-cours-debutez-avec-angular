@@ -16,6 +16,11 @@ export default class FaceSnap {
     this.picture = Object.assign({}, picture)
   }
 
+  public withLocation(location: string | undefined): FaceSnap {
+    this.setLocation(location)
+    return this
+  }
+
   public getTitle(): string {
     return this.title
   }
