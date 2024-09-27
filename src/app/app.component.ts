@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
     this.facesnapList.push(new FaceSnap(
-      'Face de snap 1',
+      'Face de Snap 1',
       'Une ville génerée par ordinateur',
       new Date(),
       5,

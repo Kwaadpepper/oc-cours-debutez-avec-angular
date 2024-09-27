@@ -1,18 +1,17 @@
-<h2>{{ facesnap.getTitle() }}</h2>
+<h2 [ngClass]="{'sdsd': true}">{{ facesnap.getTitle() | lowercase | ucfirst }}</h2>
 <div class="img-container">
   <img [src]="picture.url" [alt]="picture.alt" [title]="picture.title ">
 </div>
 <div class="content">
   @if(facesnap.hasLocation()) {
-  <p>Localisation&nbsp;: {{ facesnap.getLocation() }}</p>
+  <p>Localisation&nbsp;: {{ facesnap.getLocation() | lowercase | ucfirst }}</p>
   } @else {
   <p>Localisation&nbsp;: Non spécifiée</p>
   }
-  <p>{{ facesnap.getDescription() }}</p>
+  <p>{{ facesnap.getDescription() | lowercase | ucfirst }}</p>
   <p><app-date-pipe [date]="facesnap.getDate()"></app-date-pipe></p>
 </div>
 <div class="footer mt-auto mb-2">
   <button (click)="onSnap()">@if(snappedByUser) {Snapped} @else {Oh snap !}</button>
-  <span [ngStyle]="getGreenerStyle()">🤌&nbsp;{{
-    facesnap.getSnapCount() }}</span>
+  <span [ngStyle]="getGreenerStyle()">🤌&nbsp;{{ facesnap.getSnapCount() }}</span>
 </div>

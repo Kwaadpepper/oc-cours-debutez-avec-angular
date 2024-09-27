@@ -1,5 +1,6 @@
-import { CommonModule, NgStyle } from '@angular/common'
+import { CommonModule, NgClass, NgStyle } from '@angular/common'
 import { Component, HostBinding, Input, OnInit } from '@angular/core'
+import { NgStringPipesModule } from 'ngx-pipes'
 import FaceSnap from '../../core/models/face-snap'
 import Picture from '../../core/types/picture'
 import { DatePipeComponent } from '../helpers/date-format/date-format.component'
@@ -7,7 +8,7 @@ import { DatePipeComponent } from '../helpers/date-format/date-format.component'
 @Component({
   selector: 'app-face-snap',
   standalone: true,
-  imports: [DatePipeComponent, CommonModule, NgStyle],
+  imports: [DatePipeComponent, CommonModule, NgStyle, NgClass, NgStringPipesModule],
   templateUrl: './face-snap.component.html',
   styleUrl: './face-snap.component.scss',
 })
