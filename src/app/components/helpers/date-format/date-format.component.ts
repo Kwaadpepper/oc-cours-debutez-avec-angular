@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core'
   selector: 'app-date-pipe',
   imports: [DatePipe],
   standalone: true,
-  template: `@if(!isToday()) { Le {{date | date:'dd/MM/YY à HH:mm'}} } @else { Aujourd'hui à {{date | date:'HH:mm'}} }`,
+  template: `@if(!isToday()) { Le {{date | date:'short'}} } @else { Aujourd'hui à {{date | date:'shortTime'}} }`,
 })
 export class DatePipeComponent {
   @Input({ required: true }) date!: Date

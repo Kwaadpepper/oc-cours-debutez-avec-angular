@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     this.facesnapList.push(new FaceSnap(
       'Face de Snap 1',
       'Une ville génerée par ordinateur',
-      new Date(),
+      new Date('2024-03-25 12:03'),
       5,
       {
         url: 'https://www.buzzwebzine.fr/wp-content/uploads/2022/09/Starry-ia-1-1-1200x666.jpg',
