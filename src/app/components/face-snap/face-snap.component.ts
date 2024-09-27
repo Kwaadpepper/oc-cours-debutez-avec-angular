@@ -2,6 +2,7 @@ import { CommonModule, DatePipe, NgClass, NgStyle } from '@angular/common'
 import { Component, HostBinding, Input, OnInit } from '@angular/core'
 import { NgStringPipesModule } from 'ngx-pipes'
 import FaceSnap from '../../core/models/face-snap'
+import { FaceSnapsService } from '../../core/services/face-snaps.service'
 import Picture from '../../core/types/picture'
 import { DatePipeComponent } from '../helpers/date-format/date-format.component'
 
@@ -17,6 +18,9 @@ export class FaceSnapComponent implements OnInit {
 
   @HostBinding('class.snapped') isSnapped = false
 
+  constructor(private faceSnapsService: FaceSnapsService) {
+  }
+
   snappedByUser = false
   picture!: Picture
 
@@ -31,13 +35,15 @@ export class FaceSnapComponent implements OnInit {
   }
 
   snap(): void {
-    this.facesnap.incSnaps()
+    this.faceSnapsService
+      .snapFaceSnapById(this.facesnap.getId(), 'snap')
     this.snappedByUser = true
     this.isSnapped = true
   }
 
   unSnap(): void {
-    this.facesnap.subSnaps()
+    this.faceSnapsService
+      .snapFaceSnapById(this.facesnap.getId(), 'unsnap')
     this.snappedByUser = false
     this.isSnapped = false
   }

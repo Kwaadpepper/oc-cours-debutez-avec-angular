@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { cloneDeep } from 'lodash'
 import FaceSnap from '../models/face-snap'
+import { SnapAction } from '../types/snap-action.type'
 
 @Injectable({
   providedIn: 'root',
@@ -33,7 +34,15 @@ export class FaceSnapsService {
     ).withLocation('a la montagne'))
   }
 
-  getFacesnaps(): FaceSnap[] {
+  getFaceSnaps(): FaceSnap[] {
     return cloneDeep(this.facesnapList)
+  }
+
+  snapFaceSnapById(id: string, action: SnapAction): void {
+    const faceSnap = this.facesnapList.find(fs => fs.getId() === id)
+    if (faceSnap === undefined) {
+      throw new Error('Facesnap not found')
+    }
+    faceSnap.snap(action)
   }
 }

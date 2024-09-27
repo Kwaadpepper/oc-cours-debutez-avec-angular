@@ -1,4 +1,5 @@
 import Picture from '../types/picture'
+import { SnapAction } from '../types/snap-action.type'
 
 export default class FaceSnap {
   private id: string
@@ -44,12 +45,17 @@ export default class FaceSnap {
     return this.snaps
   }
 
-  public incSnaps(): void {
-    this.snaps++
-  }
-
-  public subSnaps(): void {
-    this.snaps--
+  public snap(action: SnapAction): void {
+    switch (action) {
+      case 'snap':
+        this.snaps++
+        break
+      case 'unsnap':
+        this.snaps--
+        break
+      default:
+        action satisfies never
+    }
   }
 
   public getPicture(): Picture {
