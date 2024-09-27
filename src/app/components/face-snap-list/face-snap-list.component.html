@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+    @for (facesnap of facesnapList; track $index) {
+    <app-face-snap [facesnap]="facesnap" class="col-6 col-sm-12" />
+    }
+  </div>
+</div>

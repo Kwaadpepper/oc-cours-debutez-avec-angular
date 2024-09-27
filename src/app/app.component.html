@@ -1,14 +1,8 @@
 <div class="container">
-  <header class="row py-3 mb-3">
-    <h1>Facesnap</h1>
-  </header>
+  <app-header />
 
   <main class="row mb-3 py-3">
-
-    @for (facesnap of facesnapList; track $index) {
-    <app-face-snap [facesnap]="facesnap" class="col-6 col-sm-12" />
-    }
-
+    <app-face-snap-list />
   </main>
 
   <div class="facesnap-container">
